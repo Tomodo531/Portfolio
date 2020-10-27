@@ -1,0 +1,457 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: 'Montserrat', sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.blackText__border {
+  text-shadow: 1px 1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000, 0px 1px 0 #000000, 0px -1px 0 #000000, -1px 0px 0 #000000, 1px 0px 0 #000000, 1px 1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000, 0px 1px 0 #000000, 0px -1px 0 #000000, -1px 0px 0 #000000, 1px 0px 0 #000000, 1px 1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000, 1px 1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
+  color: white;
+}
+
+.blueText__border {
+  text-shadow: 1px 1px 0 #0700ff, -1px 1px 0 #0700ff, 1px -1px 0 #0700ff, -1px -1px 0 #0700ff, 0px 1px 0 #0700ff, 0px -1px 0 #0700ff, -1px 0px 0 #0700ff, 1px 0px 0 #0700ff, 1px 1px 0 #0700ff, -1px 1px 0 #0700ff, 1px -1px 0 #0700ff, -1px -1px 0 #0700ff, 0px 1px 0 #0700ff, 0px -1px 0 #0700ff, -1px 0px 0 #0700ff, 1px 0px 0 #0700ff, 1px 1px 0 #0700ff, -1px 1px 0 #0700ff, 1px -1px 0 #0700ff, -1px -1px 0 #0700ff, 1px 1px 0 #0700ff, -1px 1px 0 #0700ff, 1px -1px 0 #0700ff, -1px -1px 0 #0700ff;
+  color: white;
+}
+
+.home {
+  position: relative;
+  diplay: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.home nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.home nav span {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.home nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+}
+
+.home nav li {
+  float: left;
+  padding-left: 20px;
+}
+
+.home nav li a {
+  font-size: 18px;
+  text-decoration: none;
+  color: black;
+  -webkit-transition: color .2s ease;
+  transition: color .2s ease;
+}
+
+.home nav li a:hover {
+  color: #0700ff;
+}
+
+.home .socials {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+}
+
+.home .socials ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+}
+
+.home .socials li {
+  padding-top: 5px;
+}
+
+.home .socials li a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: black;
+  -webkit-transition: color .2s ease;
+  transition: color .2s ease;
+}
+
+.home .socials li a:hover {
+  color: #0700ff;
+}
+
+.home .scroll {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+}
+
+.home .scroll img {
+  display: block;
+  height: 40px;
+  margin: 0 0 15px 0;
+  -webkit-animation-name: Bopping;
+          animation-name: Bopping;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.home .scroll span {
+  display: block;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: mixed;
+  margin-right: -5px;
+}
+
+@-webkit-keyframes Bopping {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+  50% {
+    -webkit-transform: translate(0px, 10px);
+    transform: translate(0px, 10px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+  }
+}
+
+.about,
+.resume,
+.projects {
+  width: 100%;
+  max-width: 1000px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: auto;
+}
+
+.about h1,
+.resume h1,
+.projects h1 {
+  font-size: 3em;
+  line-height: 1.5;
+  color: #0700ff;
+}
+
+.about h1 img,
+.resume h1 img,
+.projects h1 img {
+  height: 1.5em;
+}
+
+.about__section,
+.resume__section,
+.projects__section {
+  margin: 4rem 0 6rem 0;
+}
+
+.about p {
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 2;
+}
+
+.about img {
+  height: 2.2rem;
+}
+
+.about .marquee {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.about .marqueeContent {
+  display: inline-block;
+  -webkit-animation: Scroll 50s forwards linear infinite;
+          animation: Scroll 50s forwards linear infinite;
+}
+
+.about .marqueeContent h1 {
+  font-weight: 600;
+  font-size: 4em;
+  color: #ffffff;
+}
+
+@-webkit-keyframes Scroll {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+  }
+}
+
+@keyframes Scroll {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0);
+  }
+}
+
+.resume .emojiHammer {
+  -webkit-animation-name: HammerEmoji;
+          animation-name: HammerEmoji;
+}
+
+.resume .emojiHat {
+  -webkit-animation-name: HatEmoji;
+          animation-name: HatEmoji;
+}
+
+.resume .emojiHat,
+.resume .emojiHammer {
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.resume h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  letter-spacing: 1.5;
+}
+
+.resume h1.resume__name {
+  color: black;
+  font-size: 2.5em;
+  font-weight: 400;
+}
+
+.resume span.resume__nameBlue {
+  font-size: .6em;
+  color: #0700ff;
+}
+
+.resume span.resume__line {
+  display: inline-block;
+  width: 30px;
+  height: 2px;
+  margin: 0 10px 0 10px;
+  background: #0700ff;
+}
+
+@-webkit-keyframes HammerEmoji {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  70% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  77.5% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  85% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  92.5% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes HatEmoji {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  70% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  85% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+.projects .emojiProgrammer {
+  -webkit-animation-name: ProgrammerEmoji;
+          animation-name: ProgrammerEmoji;
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.projects__grid {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+
+.projects__grid div {
+  padding: 10px;
+}
+
+.projects__grid div img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.projects__grid div p {
+  line-height: 1.5;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.projects__grid div p i {
+  font-size: 20px;
+}
+
+@-webkit-keyframes ProgrammerEmoji {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  70% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  80% {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  90% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+footer {
+  width: 100%;
+  background: #0700ff;
+}
+
+footer .footerContainer {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(350px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  border: solid red;
+}
+
+footer .footerContainer div {
+  border: solid red;
+}
+
+footer .footerContainer h1 {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+}
+
+footer li {
+  padding-top: 5px;
+}
+
+footer li p {
+  color: #ffffff;
+  line-height: 2;
+  font-weight: 600;
+}
+
+footer li a,
+footer li span {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #ffffffa4;
+  font-weight: 600;
+  line-height: 1.5;
+  -webkit-transition: color .2s ease;
+  transition: color .2s ease;
+}
+
+footer li i {
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+/*# sourceMappingURL=index.css.map */
