@@ -6,6 +6,7 @@ html {
   --textBorderBlack: #000000;
   --background: #ffffff;
   --labelScale: grayscale(1);
+  --konami: #0700ff;
 }
 
 html[data-theme='dark'] {
@@ -15,6 +16,7 @@ html[data-theme='dark'] {
   --textBorderBlack: #ffffff;
   --background: #2f3439;
   --labelScale: grayscale(0);
+  --konami: #9c91e2;
 }
 
 @font-face {
@@ -501,6 +503,7 @@ a {
 }
 
 footer {
+  position: relative;
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -576,7 +579,24 @@ footer .footerContainer__contact:hover .emojiHand {
 
 footer li i {
   font-weight: 400;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #ffffffa4;
+}
+
+footer .Konami {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  padding: 10px;
+  color: var(--konami);
+}
+
+footer .Konami i {
+  color: var(--konami);
 }
 
 @-webkit-keyframes Waving {
