@@ -524,11 +524,13 @@ footer {
 	overflow: auto;
 
 	h1 {
+		display: flex;
 		font-family: IntegralCF-DemiBold;
 	}
 
 	h1 img {
 		height: 1.5em;
+		margin-left: 20px;
 	}
 
 	&__section {
