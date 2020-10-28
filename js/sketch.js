@@ -8,9 +8,9 @@ var mImgload;
 var bgImg;
 var enemyImg;
 var bitFont;
-var death = new Audio('images/Game/Death.mp3');
+var death = new Audio('Portfolio/images/Game/Death.mp3');
 var deathPlayed = false;
-var gameMusic = new Audio('images/Game/GameMusic.mp3');
+var gameMusic = new Audio('Portfolio/images/Game/GameMusic.mp3');
 
 gameMusic.addEventListener(
 	'ended',
@@ -23,10 +23,10 @@ gameMusic.addEventListener(
 gameMusic.play();
 
 function preload() {
-	mImgload = createImg('images/Game/pModel.gif');
-	bgImg = loadImage('images/Game/GameBG.png');
-	enemyImg = loadImage('images/Game/enemyModel.jpg');
-	bitFont = loadFont('css/fonts/8-BIT WONDER.TTF');
+	mImgload = createImg('Portfolio/images/Game/pModel.gif');
+	bgImg = loadImage('Portfolio/images/Game/GameBG.png');
+	enemyImg = loadImage('Portfolio/images/Game/enemyModel.jpg');
+	bitFont = loadFont('Portfolio/css/fonts/8-BIT WONDER.TTF');
 }
 
 function setup() {
