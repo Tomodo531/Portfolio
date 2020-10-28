@@ -1,13 +1,41 @@
 $blue: #0700ff;
 $textBorderBlack: #000000;
-$textBorderBlue: #0700ff;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@font-face {
+	font-family: Moderat-Regular;
+	src: url(Moderat-Regular.ttf);
+}
+
+@font-face {
+	font-family: IntegralCF-Regular;
+	src: url(IntegralCF-Regular.otf);
+}
+
+@font-face {
+	font-family: IntegralCF-DemiBold;
+	src: url(IntegralCF-DemiBold.otf);
+}
+
+@font-face {
+	font-family: IntegralCF-ExtraBold;
+	src: url(IntegralCF-ExtraBold.otf);
+}
+
+@font-face {
+	font-family: IntegralCF-HeavyOblique;
+	src: url(IntegralCF-HeavyOblique.otf);
+}
+
 * {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Moderat-Regular', sans-serif;
 	padding: 0;
 	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
 }
 
 .blackText__border {
@@ -23,24 +51,77 @@ $textBorderBlue: #0700ff;
 }
 
 .blueText__border {
-	text-shadow: 1px 1px 0 $textBorderBlue, -1px 1px 0 $textBorderBlue, 1px -1px 0 $textBorderBlue,
-		-1px -1px 0 $textBorderBlue, 0px 1px 0 $textBorderBlue, 0px -1px 0 $textBorderBlue, -1px 0px 0 $textBorderBlue,
-		1px 0px 0 $textBorderBlue, 1px 1px 0 $textBorderBlue, -1px 1px 0 $textBorderBlue, 1px -1px 0 $textBorderBlue,
-		-1px -1px 0 $textBorderBlue, 0px 1px 0 $textBorderBlue, 0px -1px 0 $textBorderBlue, -1px 0px 0 $textBorderBlue,
-		1px 0px 0 $textBorderBlue, 1px 1px 0 $textBorderBlue, -1px 1px 0 $textBorderBlue, 1px -1px 0 $textBorderBlue,
-		-1px -1px 0 $textBorderBlue, 1px 1px 0 $textBorderBlue, -1px 1px 0 $textBorderBlue, 1px -1px 0 $textBorderBlue,
-		-1px -1px 0 $textBorderBlue;
+	text-shadow: 1px 1px 0 $blue, -1px 1px 0 $blue, 1px -1px 0 $blue, -1px -1px 0 $blue, 0px 1px 0 $blue,
+		0px -1px 0 $blue, -1px 0px 0 $blue, 1px 0px 0 $blue, 1px 1px 0 $blue, -1px 1px 0 $blue, 1px -1px 0 $blue,
+		-1px -1px 0 $blue, 0px 1px 0 $blue, 0px -1px 0 $blue, -1px 0px 0 $blue, 1px 0px 0 $blue, 1px 1px 0 $blue,
+		-1px 1px 0 $blue, 1px -1px 0 $blue, -1px -1px 0 $blue, 1px 1px 0 $blue, -1px 1px 0 $blue, 1px -1px 0 $blue,
+		-1px -1px 0 $blue;
 	color: white;
+}
+
+.link__button {
+	min-width: 100px;
+	display: inline-block;
+	background-color: $blue;
+	border-radius: 5px;
+	transition: all .3s;
+	text-align: center;
+	padding: 1px 6px;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+	padding: 15px;
+}
+
+.link__button:hover {
+	background-color: #2119fd;
+	box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.24);
+}
+
+.hover__image {
+	position: absolute;
+	display: none;
+	z-index: 0;
+	max-width: 200px;
+	max-height: 400px;
+}
+
+.hover__image img {
+	width: 100%;
+	height: 100%;
+	-o-object-fit: contain;
+	object-fit: contain;
+	-webkit-filter: brightness(125%);
+	filter: brightness(125%);
 }
 
 .home {
 	position: relative;
-	diplay: flex;
+	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
 	height: 100vh;
 	box-sizing: border-box;
+
+	&__content {
+		width: 100%;
+		text-align: center;
+		padding: 15px;
+		h1 {
+			font-family: IntegralCF-HeavyOblique, sans-serif;
+			position: relative;
+			font-weight: 800;
+			font-size: 8em;
+			line-height: 1;
+			color: $blue;
+		}
+
+		h2 {
+			font-weight: 500;
+		}
+	}
 
 	nav {
 		display: flex;
@@ -49,9 +130,10 @@ $textBorderBlue: #0700ff;
 		top: 0;
 		left: 0;
 		right: 0;
-		padding: 20px;
+		padding: 10px 20px 0 20px;
 
 		span {
+			font-family: IntegralCF-HeavyOblique;
 			font-weight: 700;
 			font-size: 3rem;
 		}
@@ -72,6 +154,7 @@ $textBorderBlue: #0700ff;
 			font-size: 18px;
 			text-decoration: none;
 			color: black;
+			font-weight: 500;
 			transition: color .2s ease;
 		}
 
@@ -132,7 +215,7 @@ $textBorderBlue: #0700ff;
 			display: block;
 			writing-mode: vertical-rl;
 			text-orientation: mixed;
-			margin-right: -5px;
+			margin-right: -15px;
 		}
 	}
 
@@ -149,29 +232,6 @@ $textBorderBlue: #0700ff;
 			-webkit-transform: translate(0px, 0px);
 			transform: translate(0px, 0px);
 		}
-	}
-}
-
-.about,
-.resume,
-.projects {
-	width: 100%;
-	max-width: 1000px;
-	box-sizing: border-box;
-	margin: auto;
-
-	h1 {
-		font-size: 3em;
-		line-height: 1.5;
-		color: $blue;
-	}
-
-	h1 img {
-		height: 1.5em;
-	}
-
-	&__section {
-		margin: 4rem 0 6rem 0;
 	}
 }
 
@@ -198,6 +258,7 @@ $textBorderBlue: #0700ff;
 	}
 
 	.marqueeContent h1 {
+		font-family: IntegralCF-HeavyOblique;
 		font-weight: 600;
 		font-size: 4em;
 		color: #ffffff;
@@ -234,13 +295,14 @@ $textBorderBlue: #0700ff;
 		align-items: center;
 		font-weight: 600;
 		margin-bottom: 2rem;
-		letter-spacing: 1.5;
+		letter-spacing: 2.5;
 	}
 
 	h1.resume__name {
+		font-family: 'Montserrat', sans-serif;
 		color: black;
 		font-size: 2.5em;
-		font-weight: 400;
+		font-weight: 500;
 	}
 
 	span.resume__nameBlue {
@@ -251,8 +313,8 @@ $textBorderBlue: #0700ff;
 	span.resume__line {
 		display: inline-block;
 		width: 30px;
-		height: 2px;
-		margin: 0 10px 0 10px;
+		height: 1.5px;
+		margin: 2px 10px 0 10px;
 		background: $blue;
 	}
 }
@@ -329,7 +391,7 @@ $textBorderBlue: #0700ff;
 
 	&__grid div p {
 		line-height: 1.5;
-		font-size: 18px;
+		font-size: 20px;
 		font-weight: 600;
 	}
 
@@ -363,24 +425,29 @@ $textBorderBlue: #0700ff;
 
 footer {
 	width: 100%;
+	box-sizing: border-box;
 	background: $blue;
+	margin-top: 5em;
+	padding: 7em 2em 5em 2em;
 
 	.footerContainer {
 		width: 100%;
-		max-width: 1200px;
+		max-width: 1100px;
 		margin: auto;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-		border: solid red;
+		grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+		justify-content: center;
 	}
 
 	.footerContainer div {
-		border: solid red;
+		padding-bottom: 2em;
 	}
 
 	.footerContainer h1 {
+		font-family: IntegralCF-DemiBold;
 		color: #ffffff;
-		font-weight: 600;
+		font-weight: 500;
+		font-size: 3em;
 	}
 
 	ul {
@@ -406,12 +473,145 @@ footer {
 		text-decoration: none;
 		color: #ffffffa4;
 		font-weight: 600;
-		line-height: 1.5;
+		line-height: 2;
 		transition: color .2s ease;
+	}
+
+	li img {
+		height: 1.5rem;
+		transform: translateY(5px);
+	}
+
+	.footerContainer__contact:hover .emojiHand {
+		animation: Waving .8s forwards;
+		transform-origin: bottom right;
 	}
 
 	li i {
 		font-weight: 400;
 		font-size: 1.3rem;
+	}
+}
+
+@keyframes Waving {
+	0% {
+		transform: rotate(0deg) translateY(5px);
+	}
+	20% {
+		transform: rotate(-20deg) translateY(5px);
+	}
+	40% {
+		transform: rotate(20deg) translateY(5px);
+	}
+	60% {
+		transform: rotate(-20deg) translateY(5px);
+	}
+	80% {
+		transform: rotate(20deg) translateY(5px);
+	}
+	100% {
+		transform: rotate(0deg) translateY(5px);
+	}
+}
+
+.about,
+.resume,
+.projects {
+	width: 100%;
+	max-width: 1000px;
+	box-sizing: border-box;
+	margin: auto;
+	overflow: auto;
+
+	h1 {
+		font-family: IntegralCF-DemiBold;
+	}
+
+	h1 img {
+		height: 1.5em;
+	}
+
+	&__section {
+		margin: 2em 0 5em 0;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.about,
+	.resume,
+	.projects {
+		padding: 0 1em 0 1em;
+
+		h1 {
+			font-size: 2.3em;
+			line-height: 1.5;
+			color: $blue;
+		}
+	}
+
+	.about p {
+		font-size: 1.3em;
+	}
+
+	.about .marqueeContent h1 {
+		font-size: 3em;
+	}
+
+	.footerContainer div:nth-child(1) {
+		grid-column: span 1fr;
+	}
+
+	.home__content h1 {
+		font-size: 4em;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.about,
+	.resume,
+	.projects {
+		padding: 0 2em 0 2em;
+
+		h1 {
+			font-size: 2.8em;
+			line-height: 1.5;
+			color: $blue;
+		}
+	}
+
+	.footerContainer div:nth-child(1) {
+		grid-column: span 2;
+	}
+
+	.home__content h1 {
+		font-size: 6em;
+	}
+}
+
+@media only screen and (max-width: 680px) {
+	nav ul {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.about,
+	.resume,
+	.projects {
+		padding: 0 2.2em 0 2.2em;
+
+		h1 {
+			font-size: 3em;
+			line-height: 1.5;
+			color: $blue;
+		}
+	}
+
+	.footerContainer div:nth-child(1) {
+		grid-column: span 2;
+	}
+
+	.home__content h1 {
+		font-size: 8em;
 	}
 }
