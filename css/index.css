@@ -1,4 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  --blue: #0700ff;
+  --blueHover: #2119fd;
+  --contentColor: #000000;
+  --textBorderBlack: #000000;
+  --background: #ffffff;
+  --labelScale: grayscale(1);
+}
+
+html[data-theme='dark'] {
+  --blue: #6957e2;
+  --blueHover: #7968e9;
+  --contentColor: #ffffff;
+  --textBorderBlack: #ffffff;
+  --background: #2f3439;
+  --labelScale: grayscale(0);
+}
+
 @font-face {
   font-family: Moderat-Regular;
   src: url(./fonts/Moderat-Regular.ttf);
@@ -32,22 +50,31 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--background);
+}
+
+p,
+span,
+i,
+h2,
+a {
+  color: var(--contentColor);
 }
 
 .blackText__border {
-  text-shadow: 1px 1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000, 0px 1px 0 #000000, 0px -1px 0 #000000, -1px 0px 0 #000000, 1px 0px 0 #000000, 1px 1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000, 0px 1px 0 #000000, 0px -1px 0 #000000, -1px 0px 0 #000000, 1px 0px 0 #000000, 1px 1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000, 1px 1px 0 #000000, -1px 1px 0 #000000, 1px -1px 0 #000000, -1px -1px 0 #000000;
-  color: white;
+  text-shadow: 1px 1px 0 var(--textBorderBlack), -1px 1px 0 var(--textBorderBlack), 1px -1px 0 var(--textBorderBlack), -1px -1px 0 var(--textBorderBlack), 0px 1px 0 var(--textBorderBlack), 0px -1px 0 var(--textBorderBlack), -1px 0px 0 var(--textBorderBlack), 1px 0px 0 var(--textBorderBlack), 1px 1px 0 var(--textBorderBlack), -1px 1px 0 var(--textBorderBlack), 1px -1px 0 var(--textBorderBlack), -1px -1px 0 var(--textBorderBlack), 0px 1px 0 var(--textBorderBlack), 0px -1px 0 var(--textBorderBlack), -1px 0px 0 var(--textBorderBlack), 1px 0px 0 var(--textBorderBlack), 1px 1px 0 var(--textBorderBlack), -1px 1px 0 var(--textBorderBlack), 1px -1px 0 var(--textBorderBlack), -1px -1px 0 var(--textBorderBlack), 1px 1px 0 var(--textBorderBlack), -1px 1px 0 var(--textBorderBlack), 1px -1px 0 var(--textBorderBlack), -1px -1px 0 var(--textBorderBlack);
+  color: var(--background);
 }
 
 .blueText__border {
-  text-shadow: 1px 1px 0 #0700ff, -1px 1px 0 #0700ff, 1px -1px 0 #0700ff, -1px -1px 0 #0700ff, 0px 1px 0 #0700ff, 0px -1px 0 #0700ff, -1px 0px 0 #0700ff, 1px 0px 0 #0700ff, 1px 1px 0 #0700ff, -1px 1px 0 #0700ff, 1px -1px 0 #0700ff, -1px -1px 0 #0700ff, 0px 1px 0 #0700ff, 0px -1px 0 #0700ff, -1px 0px 0 #0700ff, 1px 0px 0 #0700ff, 1px 1px 0 #0700ff, -1px 1px 0 #0700ff, 1px -1px 0 #0700ff, -1px -1px 0 #0700ff, 1px 1px 0 #0700ff, -1px 1px 0 #0700ff, 1px -1px 0 #0700ff, -1px -1px 0 #0700ff;
-  color: white;
+  text-shadow: 1px 1px 0 var(--blue), -1px 1px 0 var(--blue), 1px -1px 0 var(--blue), -1px -1px 0 var(--blue), 0px 1px 0 var(--blue), 0px -1px 0 var(--blue), -1px 0px 0 var(--blue), 1px 0px 0 var(--blue), 1px 1px 0 var(--blue), -1px 1px 0 var(--blue), 1px -1px 0 var(--blue), -1px -1px 0 var(--blue), 0px 1px 0 var(--blue), 0px -1px 0 var(--blue), -1px 0px 0 var(--blue), 1px 0px 0 var(--blue), 1px 1px 0 var(--blue), -1px 1px 0 var(--blue), 1px -1px 0 var(--blue), -1px -1px 0 var(--blue), 1px 1px 0 var(--blue), -1px 1px 0 var(--blue), 1px -1px 0 var(--blue), -1px -1px 0 var(--blue);
+  color: var(--background);
 }
 
 .link__button {
   min-width: 100px;
   display: inline-block;
-  background-color: #0700ff;
+  background-color: var(--blue);
   border-radius: 5px;
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -62,7 +89,7 @@ html {
 }
 
 .link__button:hover {
-  background-color: #2119fd;
+  background-color: var(--blueHover);
   -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.24);
           box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.12), 0 2px 6px 0 rgba(0, 0, 0, 0.24);
 }
@@ -113,7 +140,7 @@ html {
   font-weight: 800;
   font-size: 8em;
   line-height: 1;
-  color: #0700ff;
+  color: var(--blue);
 }
 
 .home__content h2 {
@@ -152,17 +179,26 @@ html {
   padding-left: 20px;
 }
 
+.home nav li label img {
+  height: 30px;
+  -webkit-filter: var(--labelScale);
+          filter: var(--labelScale);
+}
+
+.home nav li input {
+  display: none;
+}
+
 .home nav li a {
   font-size: 18px;
   text-decoration: none;
-  color: black;
   font-weight: 500;
   -webkit-transition: color .2s ease;
   transition: color .2s ease;
 }
 
 .home nav li a:hover {
-  color: #0700ff;
+  color: var(--blue);
 }
 
 .home .socials {
@@ -192,7 +228,7 @@ html {
 }
 
 .home .socials li a:hover {
-  color: #0700ff;
+  color: var(--blue);
 }
 
 .home .scroll {
@@ -260,6 +296,10 @@ html {
   height: 2.2rem;
 }
 
+.about a {
+  color: var(--blue);
+}
+
 .about .marquee {
   width: 100%;
   position: relative;
@@ -276,7 +316,7 @@ html {
   font-family: IntegralCF-HeavyOblique;
   font-weight: 600;
   font-size: 4em;
-  color: #ffffff;
+  color: var(--background);
 }
 
 @-webkit-keyframes Scroll {
@@ -335,14 +375,14 @@ html {
 
 .resume h1.resume__name {
   font-family: 'Montserrat', sans-serif;
-  color: black;
+  color: var(--contentColor);
   font-size: 2.5em;
   font-weight: 500;
 }
 
 .resume span.resume__nameBlue {
   font-size: .6em;
-  color: #0700ff;
+  color: var(--blue);
 }
 
 .resume span.resume__line {
@@ -350,7 +390,7 @@ html {
   width: 30px;
   height: 1.5px;
   margin: 2px 10px 0 10px;
-  background: #0700ff;
+  background: var(--blue);
 }
 
 @-webkit-keyframes HammerEmoji {
@@ -429,9 +469,8 @@ html {
 }
 
 .projects__grid div p {
-  line-height: 1.5;
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
 .projects__grid div p i {
@@ -465,7 +504,7 @@ footer {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  background: #0700ff;
+  background: var(--blue);
   margin-top: 5em;
   padding: 7em 2em 5em 2em;
 }
@@ -638,7 +677,7 @@ footer li i {
   .projects h1 {
     font-size: 2.3em;
     line-height: 1.5;
-    color: #0700ff;
+    color: var(--blue);
   }
   .about p {
     font-size: 1.3em;
@@ -665,7 +704,7 @@ footer li i {
   .projects h1 {
     font-size: 2.8em;
     line-height: 1.5;
-    color: #0700ff;
+    color: var(--blue);
   }
   .footerContainer div:nth-child(1) {
     grid-column: span 2;
@@ -692,7 +731,7 @@ footer li i {
   .projects h1 {
     font-size: 3em;
     line-height: 1.5;
-    color: #0700ff;
+    color: var(--blue);
   }
   .footerContainer div:nth-child(1) {
     grid-column: span 2;
