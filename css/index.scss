@@ -510,7 +510,7 @@ footer {
 	li span {
 		font-size: 1rem;
 		text-decoration: none;
-		color: #ffffffa4;
+		color: rgba(255, 255, 255, 0.643);
 		font-weight: 600;
 		line-height: 2;
 		transition: color .2s ease;
@@ -530,7 +530,7 @@ footer {
 		font-weight: 400;
 		font-size: 1.5rem;
 		text-decoration: none;
-		color: #ffffffa4;
+		color: rgba(255, 255, 255, 0.643);
 	}
 
 	.Konami {
@@ -646,7 +646,7 @@ footer {
 	}
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 710px) {
 	nav ul {
 		display: none;
 	}
