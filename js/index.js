@@ -1,63 +1,67 @@
 /* ----------------------------------------------------------------
-	Smooth-Scrollbar
-----------------------------------------------------------------*/
-
-var Scrollbar = window.Scrollbar;
-
-const scrollbar = Scrollbar.init(document.querySelector('#my-scrollbar'), {
-	syncCallbacks: true
-});
-
-function scrollFunc(id) {
-	let element = document.querySelector(`.${id}`);
-	let top = element.offsetTop - element.scrollTop + element.clientTop;
-
-	$({ top: yScroll }).animate(
-		{ top: top },
-		{
-			duration: 500,
-			easing: 'swing',
-			step(value) {
-				scrollbar.setPosition(0, value);
-			}
-		}
-	);
-}
-
-/* ----------------------------------------------------------------
 	Custom cursor
 ----------------------------------------------------------------*/
 
 var darkMode = false;
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 	$('.Konami', 'hover__image').hide();
+
+	function scrollFunc(id) {
+		window.location.href = `#${id}`;
+	}
+} else {
+	/* ----------------------------------------------------------------
+	Smooth-Scrollbar
+	----------------------------------------------------------------*/
+
+	var Scrollbar = window.Scrollbar;
+
+	const scrollbar = Scrollbar.init(document.querySelector('#my-scrollbar'), {
+		syncCallbacks: true
+	});
+
+	function scrollFunc(id) {
+		let element = document.querySelector(`.${id}`);
+		let top = element.offsetTop - element.scrollTop + element.clientTop;
+
+		$({ top: yScroll }).animate(
+			{ top: top },
+			{
+				duration: 500,
+				easing: 'swing',
+				step(value) {
+					scrollbar.setPosition(0, value);
+				}
+			}
+		);
+	}
+
+	var xMousePos = 0;
+	var yMousePos = 0;
+	var xScroll = 0;
+	var yScroll = 0;
+
+	document.addEventListener('mousemove', (e) => {
+		xMousePos = e.pageX;
+		yMousePos = e.pageY;
+
+		$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
+	});
+
+	scrollbar.addListener(({ offset }) => {
+		xScroll = offset.x;
+		yScroll = offset.y;
+
+		$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
+	});
+
+	$('.hover__image_active').mouseenter(function() {
+		$('.hover__image').show();
+	});
+	$('.hover__image_active').mouseleave(function() {
+		$('.hover__image').hide();
+	});
 }
-
-var xMousePos = 0;
-var yMousePos = 0;
-var xScroll = 0;
-var yScroll = 0;
-
-document.addEventListener('mousemove', (e) => {
-	xMousePos = e.pageX;
-	yMousePos = e.pageY;
-
-	$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
-});
-
-scrollbar.addListener(({ offset }) => {
-	xScroll = offset.x;
-	yScroll = offset.y;
-
-	$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
-});
-
-$('.hover__image_active').mouseenter(function() {
-	$('.hover__image').show();
-});
-$('.hover__image_active').mouseleave(function() {
-	$('.hover__image').hide();
-});
 
 /* ----------------------------------------------------------------
 	Darkmode
