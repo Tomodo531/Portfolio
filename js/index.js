@@ -4,10 +4,13 @@
 
 var darkMode = false;
 if (/Mobi|Android/i.test(navigator.userAgent)) {
-	$('.Konami', 'hover__image').hide();
+	$('.Konami').hide();
 
 	function scrollFunc(id) {
-		window.location.href = `#${id}`;
+		console.log(id);
+		document.querySelector(`.about`).scrollIntoView({
+			behavior: 'smooth'
+		});
 	}
 } else {
 	/* ----------------------------------------------------------------
