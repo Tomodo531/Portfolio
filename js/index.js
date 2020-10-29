@@ -3,7 +3,7 @@
 ----------------------------------------------------------------*/
 
 var darkMode = false;
-if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+if (/Mobi|Android/i.test(navigator.userAgent)) {
 	$('.Konami', 'hover__image').hide();
 
 	function scrollFunc(id) {
