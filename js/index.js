@@ -32,7 +32,7 @@ var darkMode = false;
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 if (isMobile) {
-	$('.Konami', 'hover__image').css({ display: 'none' });
+	$('.Konami', 'hover__image').hide();
 }
 
 var xMousePos = 0;
