@@ -2,38 +2,38 @@
 	Custom cursor
 ----------------------------------------------------------------*/
 
+/* ----------------------------------------------------------------
+	Smooth-Scrollbar*/
+
+var Scrollbar = window.Scrollbar;
+
+const scrollbar = Scrollbar.init(document.querySelector('#my-scrollbar'), {
+	syncCallbacks: true
+});
+
+function scrollFunc(id) {
+	let top = document.querySelector(`.${id}`).getBoundingClientRect().top;
+
+	$({ top: 0 }).animate(
+		{ top: top },
+		{
+			duration: 500,
+			easing: 'swing',
+			step(value) {
+				scrollbar.setPosition(0, value);
+			}
+		}
+	);
+}
+
+/*----------------------------------------------------------------*/
+
 var darkMode = false;
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 if (isMobile) {
 	$('.Konami', 'hover__image').css({ display: 'none' });
 } else {
-	/* ----------------------------------------------------------------
-	Smooth-Scrollbar*/
-
-	var Scrollbar = window.Scrollbar;
-
-	const scrollbar = Scrollbar.init(document.querySelector('#my-scrollbar'), {
-		syncCallbacks: true
-	});
-
-	function scrollFunc(id) {
-		let top = document.querySelector(`.${id}`).getBoundingClientRect().top;
-
-		$({ top: 0 }).animate(
-			{ top: top },
-			{
-				duration: 500,
-				easing: 'swing',
-				step(value) {
-					scrollbar.setPosition(0, value);
-				}
-			}
-		);
-	}
-
-	/*----------------------------------------------------------------*/
-
 	var xMousePos = 0;
 	var yMousePos = 0;
 	var xScroll = 0;
