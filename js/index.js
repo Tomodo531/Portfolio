@@ -1,9 +1,6 @@
 /* ----------------------------------------------------------------
-	Custom cursor
+	Smooth-Scrollbar
 ----------------------------------------------------------------*/
-
-/* ----------------------------------------------------------------
-	Smooth-Scrollbar*/
 
 var Scrollbar = window.Scrollbar;
 
@@ -12,9 +9,10 @@ const scrollbar = Scrollbar.init(document.querySelector('#my-scrollbar'), {
 });
 
 function scrollFunc(id) {
-	let top = document.querySelector(`.${id}`).getBoundingClientRect().top;
+	let element = document.querySelector(`.${id}`);
+	let top = element.offsetTop - element.scrollTop + element.clientTop;
 
-	$({ top: 0 }).animate(
+	$({ top: yScroll }).animate(
 		{ top: top },
 		{
 			duration: 500,
@@ -26,7 +24,9 @@ function scrollFunc(id) {
 	);
 }
 
-/*----------------------------------------------------------------*/
+/* ----------------------------------------------------------------
+	Custom cursor
+----------------------------------------------------------------*/
 
 var darkMode = false;
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
