@@ -14,7 +14,7 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
 	}
 } else {
 	/* ----------------------------------------------------------------
-	Smooth-Scrollbar
+		Smooth-Scrollbar
 	----------------------------------------------------------------*/
 
 	var Scrollbar = window.Scrollbar;
