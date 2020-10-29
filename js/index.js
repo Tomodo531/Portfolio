@@ -29,9 +29,7 @@ function scrollFunc(id) {
 ----------------------------------------------------------------*/
 
 var darkMode = false;
-var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-if (isMobile) {
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 	$('.Konami', 'hover__image').hide();
 }
 
