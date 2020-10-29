@@ -33,33 +33,33 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 if (isMobile) {
 	$('.Konami', 'hover__image').css({ display: 'none' });
-} else {
-	var xMousePos = 0;
-	var yMousePos = 0;
-	var xScroll = 0;
-	var yScroll = 0;
-
-	document.addEventListener('mousemove', (e) => {
-		xMousePos = e.pageX;
-		yMousePos = e.pageY;
-
-		$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
-	});
-
-	scrollbar.addListener(({ offset }) => {
-		xScroll = offset.x;
-		yScroll = offset.y;
-
-		$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
-	});
-
-	$('.hover__image_active').mouseenter(function() {
-		$('.hover__image').show();
-	});
-	$('.hover__image_active').mouseleave(function() {
-		$('.hover__image').hide();
-	});
 }
+
+var xMousePos = 0;
+var yMousePos = 0;
+var xScroll = 0;
+var yScroll = 0;
+
+document.addEventListener('mousemove', (e) => {
+	xMousePos = e.pageX;
+	yMousePos = e.pageY;
+
+	$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
+});
+
+scrollbar.addListener(({ offset }) => {
+	xScroll = offset.x;
+	yScroll = offset.y;
+
+	$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
+});
+
+$('.hover__image_active').mouseenter(function() {
+	$('.hover__image').show();
+});
+$('.hover__image_active').mouseleave(function() {
+	$('.hover__image').hide();
+});
 
 /* ----------------------------------------------------------------
 	Darkmode
