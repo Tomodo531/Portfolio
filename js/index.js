@@ -1,45 +1,60 @@
+/* ----------------------------------------------------------------
+	Custom cursor
+----------------------------------------------------------------*/
+
 var darkMode = false;
 var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
-var ua = window.navigator.userAgent;
-var msie = ua.indexOf('MSIE ');
-
-window.onblur = () => {
-	document.title = "Martin H. Olesen | Andy's gone!";
-};
 
 if (isMobile) {
 	$('.Konami', 'hover__image').css({ display: 'none' });
 } else {
+	/* ----------------------------------------------------------------
+	Smooth-Scrollbar
+	----------------------------------------------------------------*/
+
 	var Scrollbar = window.Scrollbar;
 
-	Scrollbar.init(document.querySelector('#my-scrollbar'));
+	const scrollbar = Scrollbar.init(document.querySelector('#my-scrollbar'), {
+		syncCallbacks: true
+	});
+
+	console.log($('#about').scrollTop());
+
+	function scrollFunc(id) {
+		console.log(id);
+		let top = document.querySelector(`.${id}`).getBoundingClientRect().top;
+
+		$({ top: 0 }).animate(
+			{ top: top },
+			{
+				duration: 500,
+				easing: 'swing',
+				step(value) {
+					console.log(value);
+					scrollbar.setPosition(0, value);
+				}
+			}
+		);
+	}
 
 	var xMousePos = 0;
 	var yMousePos = 0;
-	var lastScrolledLeft = 0;
-	var lastScrolledTop = 0;
+	var xScroll = 0;
+	var yScroll = 0;
 
 	document.addEventListener('mousemove', (e) => {
 		xMousePos = e.pageX;
 		yMousePos = e.pageY;
 
-		$('.hover__image').css({ left: xMousePos + 5, top: yMousePos + 5 });
+		$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
 	});
 
-	document.addEventListener('scroll', function(event) {
-		if (lastScrolledLeft != $(document).scrollLeft()) {
-			xMousePos -= lastScrolledLeft;
-			lastScrolledLeft = $(document).scrollLeft();
-			xMousePos += lastScrolledLeft;
-		}
-		if (lastScrolledTop != $(document).scrollTop()) {
-			yMousePos -= lastScrolledTop;
-			lastScrolledTop = $(document).scrollTop();
-			yMousePos += lastScrolledTop;
-		}
+	scrollbar.addListener(({ offset }) => {
+		xScroll = offset.x;
+		yScroll = offset.y;
+		console.log(xScroll, yScroll);
 
-		$('.hover__image').css({ left: xMousePos + 5, top: yMousePos + 5 });
+		$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
 	});
 
 	$('.hover__image_active').mouseenter(function() {
@@ -50,17 +65,19 @@ if (isMobile) {
 	});
 }
 
-var checkbox = document.querySelector('input[name=mode]');
+/* ----------------------------------------------------------------
+	Darkmode
+----------------------------------------------------------------*/
 
-checkbox.addEventListener('change', function() {
-	if (this.checked) {
+const setMode = () => {
+	if (checkbox.checked) {
 		trans();
 		document.documentElement.setAttribute('data-theme', 'dark');
 	} else {
 		trans();
 		document.documentElement.setAttribute('data-theme', 'light');
 	}
-});
+};
 
 let trans = () => {
 	document.documentElement.classList.add('transition');
@@ -68,6 +85,18 @@ let trans = () => {
 		document.documentElement.classList.remove('transition');
 	}, 1000);
 };
+
+var checkbox = document.querySelector('input[name=mode]');
+checkbox.addEventListener('change', () => setMode());
+
+if (new Date().getHours() > 18) {
+	checkbox.checked = true;
+	setMode();
+}
+
+/* ----------------------------------------------------------------
+	Konami code
+----------------------------------------------------------------*/
 
 var keyArray = [];
 var checkArray = [
@@ -87,7 +116,6 @@ let lastKeyTime = Date.now();
 let firstKeyTime = null;
 
 document.addEventListener('keydown', (e) => {
-	console.log(e.key);
 	keyArray.push(e.key);
 
 	if (firstKeyTime === null) {
@@ -117,3 +145,11 @@ document.addEventListener('keydown', (e) => {
 		keyArray = [];
 	}
 });
+
+/* ----------------------------------------------------------------
+	onblur title change
+----------------------------------------------------------------*/
+
+window.onblur = () => {
+	document.title = "Martin H. Olesen | Andy's gone!";
+};
