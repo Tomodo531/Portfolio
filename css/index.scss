@@ -56,6 +56,10 @@ html {
 	background-color: var(--background);
 }
 
+.transition {
+	transition: all .3s ease;
+}
+
 p,
 span,
 h2,

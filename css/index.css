@@ -55,6 +55,11 @@ html {
   background-color: var(--background);
 }
 
+.transition {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
 p,
 span,
 h2,
