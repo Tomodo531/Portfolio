@@ -57,9 +57,10 @@ html {
 
 p,
 span,
-i,
 h2,
-a {
+h3,
+a,
+i {
   color: var(--contentColor);
 }
 
@@ -185,6 +186,8 @@ a {
   height: 30px;
   -webkit-filter: var(--labelScale);
           filter: var(--labelScale);
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
 }
 
 .home nav li input {
@@ -376,9 +379,9 @@ a {
 }
 
 .resume h1.resume__name {
+  display: block;
   font-family: 'Montserrat', sans-serif;
   color: var(--contentColor);
-  font-size: 2.5em;
   font-weight: 500;
 }
 
@@ -470,9 +473,13 @@ a {
   margin-bottom: 15px;
 }
 
+.projects__grid div h3 {
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
 .projects__grid div p {
   font-size: 1.5em;
-  font-weight: 500;
 }
 
 .projects__grid div p i {
@@ -508,7 +515,7 @@ footer {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   background: var(--blue);
-  margin-top: 5em;
+  margin-top: 3em;
   padding: 7em 2em 5em 2em;
 }
 
@@ -533,7 +540,6 @@ footer .footerContainer h1 {
   font-family: IntegralCF-DemiBold;
   color: #ffffff;
   font-weight: 500;
-  font-size: 3em;
 }
 
 footer ul {
@@ -557,11 +563,20 @@ footer li a,
 footer li span {
   font-size: 1rem;
   text-decoration: none;
-  color: #ffffffa4;
+  color: #ffffff;
+  opacity: .6;
   font-weight: 600;
   line-height: 2;
   -webkit-transition: color .2s ease;
   transition: color .2s ease;
+}
+
+footer li i {
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #ffffff;
+  opacity: .6;
 }
 
 footer li img {
@@ -575,13 +590,6 @@ footer .footerContainer__contact:hover .emojiHand {
           animation: Waving .8s forwards;
   -webkit-transform-origin: bottom right;
           transform-origin: bottom right;
-}
-
-footer li i {
-  font-weight: 400;
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #ffffffa4;
 }
 
 footer .Konami {
@@ -695,7 +703,7 @@ footer .Konami i {
   .about h1,
   .resume h1,
   .projects h1 {
-    font-size: 2.3em;
+    font-size: 2.1em;
     line-height: 1.5;
     color: var(--blue);
   }
@@ -710,6 +718,9 @@ footer .Konami i {
   }
   .home__content h1 {
     font-size: 4em;
+  }
+  .footerContainer h1 {
+    font-size: 2.5em;
   }
 }
 
@@ -732,10 +743,13 @@ footer .Konami i {
   .home__content h1 {
     font-size: 6em;
   }
+  .footerContainer h1 {
+    font-size: 3em;
+  }
 }
 
 @media only screen and (max-width: 710px) {
-  nav ul {
+  nav ul li:nth-child(n + 2) {
     display: none;
   }
 }

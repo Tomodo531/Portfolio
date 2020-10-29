@@ -4,9 +4,17 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf('MSIE ');
 
+window.onblur = () => {
+	document.title = "Martin H. Olesen | Andy's gone!";
+};
+
 if (isMobile) {
-	$('.konami-code', '#DarkMode', '.DarkmodeLabel').css({ display: 'none' });
+	$('.Konami', 'hover__image').css({ display: 'none' });
 } else {
+	var Scrollbar = window.Scrollbar;
+
+	Scrollbar.init(document.querySelector('#my-scrollbar'));
+
 	var xMousePos = 0;
 	var yMousePos = 0;
 	var lastScrolledLeft = 0;
