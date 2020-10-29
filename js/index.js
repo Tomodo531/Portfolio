@@ -90,7 +90,7 @@ let trans = () => {
 var checkbox = document.querySelector('input[name=mode]');
 checkbox.addEventListener('change', () => setMode());
 
-if (new Date().getHours() > 1) {
+if (new Date().getHours() > 18) {
 	document.documentElement.setAttribute('data-theme', 'dark');
 	checkbox.checked = true;
 }
