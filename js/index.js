@@ -9,8 +9,7 @@ if (isMobile) {
 	$('.Konami', 'hover__image').css({ display: 'none' });
 } else {
 	/* ----------------------------------------------------------------
-	Smooth-Scrollbar
-	----------------------------------------------------------------*/
+	Smooth-Scrollbar*/
 
 	var Scrollbar = window.Scrollbar;
 
@@ -36,6 +35,8 @@ if (isMobile) {
 			}
 		);
 	}
+
+	/*----------------------------------------------------------------*/
 
 	var xMousePos = 0;
 	var yMousePos = 0;
