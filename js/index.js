@@ -17,10 +17,7 @@ if (isMobile) {
 		syncCallbacks: true
 	});
 
-	console.log($('#about').scrollTop());
-
 	function scrollFunc(id) {
-		console.log(id);
 		let top = document.querySelector(`.${id}`).getBoundingClientRect().top;
 
 		$({ top: 0 }).animate(
@@ -29,7 +26,6 @@ if (isMobile) {
 				duration: 500,
 				easing: 'swing',
 				step(value) {
-					console.log(value);
 					scrollbar.setPosition(0, value);
 				}
 			}
@@ -53,7 +49,6 @@ if (isMobile) {
 	scrollbar.addListener(({ offset }) => {
 		xScroll = offset.x;
 		yScroll = offset.y;
-		console.log(xScroll, yScroll);
 
 		$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
 	});
