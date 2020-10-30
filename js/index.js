@@ -148,9 +148,13 @@ document.addEventListener('keydown', (e) => {
 });
 
 /* ----------------------------------------------------------------
-	onblur title change
+	onblur/onfocus title change
 ----------------------------------------------------------------*/
 
 window.onblur = () => {
 	document.title = "Martin H. Olesen | Andy's gone!";
+};
+
+window.onfocus = () => {
+	document.title = 'Martin H. Olesen | Portfolio';
 };
