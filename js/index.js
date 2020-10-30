@@ -5,6 +5,7 @@
 var darkMode = false;
 if (/Mobi|Android/i.test(navigator.userAgent)) {
 	$('.Konami').hide();
+	$('nav').css({ background: 'transparent' });
 
 	function scrollFunc(id) {
 		console.log(id);
@@ -54,6 +55,8 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
 	scrollbar.addListener(({ offset }) => {
 		xScroll = offset.x;
 		yScroll = offset.y;
+
+		$('nav').css({ top: yScroll });
 
 		$('.hover__image').css({ left: xMousePos + 5 + xScroll, top: yMousePos + 5 + yScroll });
 	});
