@@ -29,7 +29,7 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
 		let top = element.offsetTop - element.scrollTop + element.clientTop;
 
 		$({ top: yScroll }).animate(
-			{ top: top },
+			{ top: top - 40 },
 			{
 				duration: 500,
 				easing: 'swing',
