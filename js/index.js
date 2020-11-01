@@ -9,7 +9,7 @@ if (/Mobi|Android/i.test(navigator.userAgent)) {
 
 	function scrollFunc(id) {
 		console.log(id);
-		document.querySelector(`.about`).scrollIntoView({
+		document.querySelector(`.${id}`).scrollIntoView({
 			behavior: 'smooth'
 		});
 	}
