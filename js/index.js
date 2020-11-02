@@ -2,7 +2,6 @@
 	Custom cursor
 ----------------------------------------------------------------*/
 
-var darkMode = false;
 if (/Mobi|Android/i.test(navigator.userAgent)) {
 	$('.Konami').hide();
 	$('nav').css({ background: 'transparent' });
