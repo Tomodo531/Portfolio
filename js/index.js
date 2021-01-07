@@ -154,7 +154,7 @@ document.addEventListener('keydown', (e) => {
 ----------------------------------------------------------------*/
 
 window.onblur = () => {
-	document.title = "Martin H. Olesen | Andy's gone!";
+	document.title = "Martin H. Olesen | Hire me!";
 };
 
 window.onfocus = () => {
