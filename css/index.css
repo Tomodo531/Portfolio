@@ -289,7 +289,6 @@ nav li a:hover {
       -ms-writing-mode: tb-rl;
           writing-mode: vertical-rl;
   text-orientation: mixed;
-  margin-right: -15px;
 }
 
 @-webkit-keyframes Bopping {
